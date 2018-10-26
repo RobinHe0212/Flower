@@ -7,7 +7,11 @@
 		<key>GuessWhatFlowerItis.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
+<<<<<<< HEAD
 			<integer>5</integer>
+=======
+			<integer>0</integer>
+>>>>>>> master
 		</dict>
 	</dict>
 </dict>
