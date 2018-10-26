@@ -1,24 +1,92 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Gy2-MF-ApL">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Guess Who I Am-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="GuessWhatFlowerItis" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gardenBG" translatesAutoresizingMaskIntoConstraints="NO" id="kb3-da-4wk" userLabel="background">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="BDE-9X-AlI">
+                                <rect key="frame" x="35" y="87" width="312" height="289"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="cTe-jX-QXS">
+                                <rect key="frame" x="57" y="459" width="254" height="157"/>
+                                <color key="backgroundColor" red="1" green="0.6210833724" blue="0.46237486560000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="BDE-9X-AlI" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="23" id="04e-My-on9"/>
+                            <constraint firstItem="cTe-jX-QXS" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="57" id="97Y-VI-adV"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="kb3-da-4wk" secondAttribute="trailing" id="I3U-hH-XK5"/>
+                            <constraint firstItem="kb3-da-4wk" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Igl-oK-FL7"/>
+                            <constraint firstItem="kb3-da-4wk" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="Sp5-qV-u8D"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="kb3-da-4wk" secondAttribute="bottom" id="StY-6c-e5C"/>
+                            <constraint firstItem="cTe-jX-QXS" firstAttribute="top" secondItem="BDE-9X-AlI" secondAttribute="bottom" constant="83" id="V6e-H9-qpk"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="cTe-jX-QXS" secondAttribute="bottom" constant="51" id="YXH-ax-t2l"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="BDE-9X-AlI" secondAttribute="bottom" constant="291" id="eo7-hA-Pj0"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="cTe-jX-QXS" secondAttribute="trailing" constant="64" id="nza-zH-ZCW"/>
+                            <constraint firstItem="BDE-9X-AlI" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="35" id="rD5-VP-RIG"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="BDE-9X-AlI" secondAttribute="trailing" constant="28" id="ztZ-91-OI3"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Guess Who I Am" id="H42-Oc-uyH">
+                        <barButtonItem key="rightBarButtonItem" systemItem="camera" id="sIf-lp-FGg">
+                            <connections>
+                                <action selector="cameraTapped:" destination="BYZ-38-t0r" id="G74-yv-VXh"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="camera" destination="sIf-lp-FGg" id="WIj-mk-IIE"/>
+                        <outlet property="imageView" destination="BDE-9X-AlI" id="gtb-Fr-bYi"/>
+                        <outlet property="labelInfo" destination="cTe-jX-QXS" id="QjH-bv-cF8"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="892" y="-564.46776611694156"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="yiG-v5-iyT">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Gy2-MF-ApL" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="sXK-BR-Rfh">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" red="0.3066120256" green="0.8016906935" blue="0.80649830820000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="barTintColor" red="0.3066120256" green="0.8016906935" blue="0.80649830820000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="x7d-Ow-zyA"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="a4Q-as-ZFY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="157.59999999999999" y="-564.46776611694156"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="gardenBG" width="640" height="400"/>
+    </resources>
 </document>
